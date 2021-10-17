@@ -44,6 +44,7 @@ class Detail extends CI_Controller {
         ")->result_array();
 
         $data = array();
+        $status = false;
 
         if (count($checkIsExists) == 0) {
             $raw = $this->request->get("/$id/");
@@ -51,6 +52,7 @@ class Detail extends CI_Controller {
             $data["content"] = $raw;
             $data["febs"] = array();
         } else {
+            $status = true;
             $checkIsExists = $checkIsExists[0];
             $fibs = $this->customSQL->query("
                 SELECT * FROM my_pokemon_rename_fib
@@ -66,7 +68,7 @@ class Detail extends CI_Controller {
 
         return $this->request->res(200, $data, "Berhasil memuat data pokemon",
         array(
-            "is_catch" => count($checkIsExists) == 1
+            "is_catch" => $status
         ));
 	}
 }
