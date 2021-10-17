@@ -53,13 +53,20 @@ class Release extends CI_Controller {
         }
 
         $checkIsExists = $this->customSQL->query("
-            SELECT COUNT(id) as total FROM my_pokemon
+            SELECT * FROM my_pokemon
             WHERE device_id = '".$device_id."' AND pokemon_id = '".$id."'
-        ")->row()->total;
+        ")->result_array();
 
-        if ($checkIsExists != 1) 
+        if (count($checkIsExists) != 1) 
             return $this->request->res(500, null, "Gagal, pokemon tidak ditemukan",
             null);
+
+        $this->customSQL->delete(
+            array(
+                "id_my_pokemon" => $id
+            ),
+            "my_pokemon_rename_fib"
+        );
 
         $this->customSQL->delete(
             array(
