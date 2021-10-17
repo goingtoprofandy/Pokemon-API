@@ -75,10 +75,13 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '213.190.4.40',
-	'username' => 'cheva_lab',
-	'password' => 'programercheva123',
-	'database' => 'iems-master',
+	'hostname' => 'localhost',
+	// 'hostname' => '213.190.4.40',
+	'username' => 'root',
+	// 'username' => 'cheva_lab',
+	'password' => '',
+	// 'password' => 'programercheva123',
+	'database' => 'db_pokemon',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
