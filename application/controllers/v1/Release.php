@@ -69,6 +69,9 @@ class Release extends CI_Controller {
             "my_pokemon"
         );
 
-        return $this->request->res(200, $prime, "Berhasil melepaskan pokemon", null);
+        return $this->request->res(200, $prime, "Berhasil melepaskan pokemon", 
+        array(
+            "is_catch" => false
+        ));
 	}
 }

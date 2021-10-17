@@ -143,6 +143,9 @@ class CatchIt extends CI_Controller {
             "my_pokemon_rename_fib"
         );
 
-        return $this->request->res(200, null, "Berhasil mengubah nama pokemon", null);
+        return $this->request->res(200, null, "Berhasil mengubah nama pokemon",
+        array(
+            "is_catch" => true
+        ));
     }
 }
