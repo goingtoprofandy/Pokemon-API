@@ -20,7 +20,7 @@ class Views extends CI_Controller
         die(json_encode(
             array(
                 "version" => "1.0",
-                "message" => "Welcome to IEMS API"
+                "message" => "Welcome to POKEMON API"
             )
         ));
     }

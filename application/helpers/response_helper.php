@@ -16,7 +16,7 @@ class Response_helper {
     }
 
     // Check Is Have Value
-    public function checkIsNotNull($req=array(), $data) {
+    public function checkIsNotNull($req, $data) {
         $validity = array();
         foreach ($req as $item) {
             if (!isset($data[$item]) || empty($data[$item])) {

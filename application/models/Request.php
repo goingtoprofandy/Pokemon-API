@@ -21,12 +21,12 @@ class Request extends CI_Model {
         if (isset($data) || !empty($data)) $temp["data"] = $data;
         if (isset($meta) || !empty($meta)) $temp["meta"] = $meta;
 
-        header('Content-Type: application/json');
+        $this->output->set_status_header($code)
+            ->set_content_type('application/json', 'utf-8')
+            ->set_output(json_encode($temp, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES))
+            ->_display();
 
-        die(json_encode(
-            $temp,
-            JSON_PRETTY_PRINT
-        ));
+        die();
     }
 
     // Set Header
@@ -54,7 +54,7 @@ class Request extends CI_Model {
     public function get($path) {
         $this->custom_curl->createCurl(API_URI . $path);
 
-        die($this->custom_curl->__tostring());
+        return $this->custom_curl->__tostring();
     }
 
     // Get
