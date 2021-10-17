@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/pokemon_api/';
-// $config['base_url'] = 'http://213.190.4.40/iems/iems-api/';
+// $config['base_url'] = 'http://localhost/pokemon_api/';
+$config['base_url'] = 'http://103.146.203.236/pokemon_api/';
 // $config['base_url'] = 'http://localhost/iems/iems-dashboard/';
 // $config['base_url'] = 'http://213.190.4.40/leh-oleh/fe/';
 
